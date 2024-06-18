@@ -1,0 +1,12 @@
+{
+    "liveServer.settings.host": "localhost",
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.https": {
+      "enable": false,
+      "cert": "C:/pathToTheCertificate/localhost.pem",
+      "key": "C:/pathToTheKey/localhost.key",
+      "passphrase": "passphrase"
+    }
+  }

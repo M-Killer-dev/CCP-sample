@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Custom CCP -Invisible</title>
+        <style>
+            
+            @keyframes glowing {
+              0% {
+                background-color: #2ba805;
+                box-shadow: 0 0 5px #2ba805;
+              }
+              50% {
+                background-color: #49e819;
+                box-shadow: 0 0 20px #49e819;
+              }
+              100% {
+                background-color: #2ba805;
+                box-shadow: 0 0 5px #2ba805;
+              }
+            }
+            .glowingButton {
+              animation: glowing 1300ms infinite;
+            }
+          </style>
+    </head>
+
+<body>
+    <div id="topDiv">
+        <div id="myApp">
+            <h1>CCP Embeded Sample -Invisible<h1>
+        </div>
+    </div>
+    (Please wait for a few seconds until the authentication pop-up appears)
+    <div id="gridDiv" style="display: grid; grid-template-columns: 350px 450px 500px">
+        <div id="container-div" style="display: none;">
+            <!--Amazon CCP is hiding in here-->
+        </div>
+        <div id="customCCPDiv" style="width: 320px; min-width: 200px; height: 465px; min-height: 400px; border-style: outset; border-color: gray; border-width: thin;">
+            <!-- custom user experience goes here -->
+            <div id="statusDiv">
+                <div id="agentGreetingDiv" style="padding: 5px;">
+                    <!-- say hi to the agent -->
+                </div>
+                <div id="agentStatusDiv" style="padding: 5px;">
+                </div>
+                <div id="goAvailableDiv" style="background-color: rgb(48, 233, 10); padding: 10px; margin: 10px 60px 10px 60px">
+                    <span >Go Available</span><br />
+                </div>
+                <div id="goOfflineDiv" style="background-color: gray; padding: 10px; margin: 10px 60px 10px 60px">
+                    <span>Go Offline</span><br />
+                </div>
+            </div>
+            <div id="contactActionsDiv">
+                <div id="answerDiv" style="border-style: solid; border-color: black; border-width: medium; padding: 10px; margin: 10px 60px 10px 60px">
+                    <span>Answer Incoming</span><br />
+                </div>
+                <div id="hangupDiv" style="border-style: solid; border-color: black; border-width: medium; padding: 10px; margin: 10px 60px 10px 60px">
+                    <span>Hang-Up</span><br />
+                </div>
+                <div id="clearDiv" style="border-style: solid; border-color: black; border-width: medium; padding: 10px; margin: 10px 60px 10px 60px">
+                    <span>Close Contact</span><br />
+                </div>
+            </div>
+        </div>
+        <div id="logMsgsContainer">
+            <h2>Log Messages</h2>
+            <div id="logMsgs" style="height: 400px; overflow: auto; border-style: outset; border-color: gray; border-width: thin;">
+                <!-- Used to present all log messages -->
+            </div>
+        </div>
+        <div id="eventMsgsContainer">
+            <h2>Event Messages</h2>
+            <div id="eventMsgs" style="height: 400px; overflow: auto; border-style: outset; border-color: gray; border-width: thin;">
+                <!-- Used to present all events from Streams API -->
+            </div>
+        </div>
+    </div>
+    <script src="./lib/connect-streams-min.js"></script>
+    <script type="module" src="./scripts/index-invisible.js"></script>
+</body>
+</html>
+

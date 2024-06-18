@@ -53,7 +53,8 @@ export default function (ccpContainerId) {
             console.debug("CDEBUG >> onViewContact() - Now Vieving contact ID: '" + event.contactId + "'");
         }
     );
-
+    
+console.log("------contact-------------");
     const sub = connect.contact((c) => {
       console.log("adsff       asdf         contacted");
       try {
@@ -66,6 +67,11 @@ export default function (ccpContainerId) {
         logger.error("connect error", e);
       }
     });
+
+    console.log("------agent-------------");
+    connect.agent(function(agent) {
+        console.log("asdfasdfasdfasdf-agent", agent) 
+    })
 
     // Subscribe to Contact events
     connect.contact(subscribeToContactEvents);

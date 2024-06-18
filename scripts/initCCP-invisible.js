@@ -39,6 +39,20 @@ export default function (ccpContainerId) {
             ccpAckTimeout: 5000, //optional, defaults to 3000 (ms)
             ccpSynTimeout: 3000, //optional, defaults to 1000 (ms)
             ccpLoadTimeout: 10000 //optional, defaults to 5000 (ms)
+        }).then(function (agent) {
+            console.log('Amazon Connect CCP initialized successfully for agent:', agent);
+                const sub = connect.contact((c) => {
+      console.log("adsff       asdf         contacted");
+      try {
+        if (isCancelled === false) {
+          callback(c);
+        } else {
+          log("was canceled, not calling callback");
+        }
+      } catch (e) {
+        logger.error("connect error", e);
+      }
+    });
         });
         connect.getLog().warn("CDEBUG >> CCP initialized");
     } catch (err) {

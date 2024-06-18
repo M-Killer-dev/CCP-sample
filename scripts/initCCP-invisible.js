@@ -48,13 +48,15 @@ export default function (ccpContainerId) {
     
     // Subscribe to interface events when agent click on other contact tab
     // Event includes ContactID of contact selected
+
+    setTimeout(function() {
     connect.core.onViewContact(
         function (event) {
             console.debug("CDEBUG >> onViewContact() - Now Vieving contact ID: '" + event.contactId + "'");
         }
     );
-    
-console.log("------contact-------------");
+console.log(connect);
+console.log("------contact-------------", connect.contact);
     const sub = connect.contact((c) => {
       console.log("adsff       asdf         contacted");
       try {
@@ -68,7 +70,7 @@ console.log("------contact-------------");
       }
     });
 
-    console.log("------agent-------------");
+    console.log("------agent-------------", connect.agent);
     connect.agent(function(agent) {
         console.log("asdfasdfasdfasdf-agent", agent) 
     })
@@ -80,4 +82,5 @@ console.log("------contact-------------");
 
     // Send information to the Connect Logger
     connect.getLog().info("CDEBUG >> CCP initialized and subscribed to events");
+}, 3000)
 }

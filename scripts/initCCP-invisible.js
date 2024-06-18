@@ -56,7 +56,8 @@ export default function (ccpContainerId) {
         });
         connect.getLog().warn("CDEBUG >> CCP initialized");
     } catch (err) {
-        console.error(logStamp('initCCP'), err);
+        console.log("error", err);
+        // console.error(logStamp('initCCP'), err);
     }
     //----------------Init CCP Finished----------------------------
     

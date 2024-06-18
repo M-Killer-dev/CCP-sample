@@ -16,8 +16,8 @@ export default function (ccpContainerId) {
         connect.core.initCCP(
             document.getElementById(ccpContainerId), {
             ccpUrl: ccpUrl, 	// REQUIRED
-            loginPopup: true,				// optional, defaults to `true`
-            loginPopupAutoClose: true,		// optional, defaults to `false`
+            loginPopup: false,				// optional, defaults to `true`
+            loginPopupAutoClose: false,		// optional, defaults to `false`
             loginOptions: {                 // optional, if provided opens login in new window
                 autoClose: true,              // optional, defaults to `false`
                 height: 600,                  // optional, defaults to 578
